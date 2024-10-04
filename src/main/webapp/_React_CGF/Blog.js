@@ -159,6 +159,14 @@ function Blog() {
           padding, and widths of elements.
         </p>
       </div>
+
+      <div className="blogEntry">
+        <h3>HW 4 JS Component</h3>
+        <p>
+          In the Homeworks-- JS Tab Objects area, if you mouseover the tabInfo component (title, picture) 
+          the title will grow in size and the picture will sprout a border.
+        </p>
+      </div>
     </div>
   );
 }

@@ -3,11 +3,11 @@
 function MakeTab({
   genreImgObjList = [
     { label: "Old Time", val: "pics/oldTime.jpg" },
-    { label: "Bluegrass", val: "pics/bluegrass.png" },
+    { label: "Bluegrass", val: "pics/bluegrass.webp" },
     { label: "Folk", val: "pics/folk.jpg" },
     { label: "Blues", val: "pics/blues.jpeg" },
     { label: "Pop", val: "pics/pop.jpg" },
-    { label: "Rock", val: "pics/rock.jgp" },
+    { label: "Rock", val: "pics/rock.jpg" },
     { label: "Metal", val: "pics/metal.webp" },
     { label: "Other", val: "pics/other.jpg" },
   ],
@@ -41,20 +41,20 @@ function MakeTab({
   };
 
   tabObj.innerHTML = `
-    <div class="tabInfoC"></div> <br/>
+      <div class="tabInfoC"></div> <br/>
 
-    <button class="titleButtonC">Change Title to: </button>
-    <input class="titleInputC"></input> <br/><br/>
+      <button class="titleButtonC">Change Title to: </button>
+      <input class="titleInputC"></input> <br/><br/>
 
-    <button class="lengthButtonC">Add or Subtract Song Length: </button>
-    <input class="minInputC">Minutes</input>
-    <input class="secInputC">Seconds</input> <br/> <br/>
+      <button class="lengthButtonC">Add or Subtract Song Length: </button>
+      <input class="minInputC">Minutes</input>
+      <input class="secInputC">Seconds</input> <br/> <br/>
 
-    <button class="tabUrlButtonC">Change Tab URL to: </button>
-    <input class="tabUrlInputC"></input> <br/> <br/>
+      <button class="tabUrlButtonC">Change Tab URL to: </button>
+      <input class="tabUrlInputC"></input> <br/> <br/>
 
-    Genre: <select class="genreSelectC">
-    </select>
+      Genre: <select class="genreSelectC">
+      </select>
 
     `;
 
@@ -67,7 +67,7 @@ function MakeTab({
   var tabUrlInput = tabObj.getElementsByClassName("tabUrlInputC")[0];
   var titleButton = tabObj.getElementsByClassName("titleButtonC")[0];
   var titleInput = tabObj.getElementsByClassName("titleInputC")[0];
-
+  const tabInfoClassList = tabInfo.classList;
 
   for (var listEle of genreImgObjList) {
     var opt = document.createElement("option");
@@ -121,17 +121,18 @@ function MakeTab({
     display();
   };
 
-  
-  titleButton.onmouseover = function () {
-    tabInfo.classList.add("mouseover");
+  tabInfo.onmouseover = function () {
+    tabInfo.classList.add("tabMouseover");
     display();
+    console.log("moused over");
   };
 
-  titleButton.onmouseout = function () {
-    tabInfo.classList.remove("mouseover");
+  tabInfo.onmouseout = function () {
+    tabInfo.classList.remove("tabMouseover");
     display();
+    console.log("moused out");
   };
-  
+
   titleButton.onclick = function () {
     tabObj.setTitle(titleInput.value);
     display();

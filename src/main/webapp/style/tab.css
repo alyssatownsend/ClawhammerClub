@@ -1,4 +1,9 @@
-.mouseover #h3{
+.tabMouseover h3{
     font-size: 200%;
     font-weight: bolder;
+    
+}
+
+.tabMouseover img {
+    border: thick solid black;
 }

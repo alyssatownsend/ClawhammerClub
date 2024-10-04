@@ -1,0 +1,13 @@
+.dropDown .dropHeader {
+    color: #E3E0DC;
+}
+
+.dropDown .dropContent a {
+    color: #E3E0DC;
+}
+
+.dropDown .dropContent {
+    color: #E3E0DC;
+    background-color:  #6F210C;
+    box-shadow: 0.25rem 0.25rem 0.5rem lightgray;
+}
